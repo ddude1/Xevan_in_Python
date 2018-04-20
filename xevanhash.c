@@ -53,7 +53,7 @@ void xevan_hash(const char* input, char* output)
 	memset(hashB , 0, 128);
 
     sph_blake512_init(&ctx_blake);
-    sph_blake512 (&ctx_blake, input, 80);
+    sph_blake512 (&ctx_blake, input, 112);
     sph_blake512_close (&ctx_blake, hashA);
 
     sph_bmw512_init(&ctx_bmw);
