@@ -23,7 +23,7 @@
 #include "sha3/sph_haval.h"
 
 
-void xevan_hash(const char* input, char* output)
+void xevan_hash(const char* input, int size, char* output)
 {
     sph_blake512_context     ctx_blake;
     sph_bmw512_context       ctx_bmw;
@@ -53,7 +53,7 @@ void xevan_hash(const char* input, char* output)
 	memset(hashB , 0, 128);
 
     sph_blake512_init(&ctx_blake);
-    sph_blake512 (&ctx_blake, input, 112);
+    sph_blake512 (&ctx_blake, input, size);
     sph_blake512_close (&ctx_blake, hashA);
 
     sph_bmw512_init(&ctx_bmw);

@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-void xevan_hash(const char* input, char* output);
+void xevan_hash(const char* input, int size, char* output);
 
 #ifdef __cplusplus
 }

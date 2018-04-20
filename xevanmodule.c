@@ -5,6 +5,8 @@
 static PyObject *xevan_getpowhash(PyObject *self, PyObject *args)
 {
     char *output;
+    int size,ok;
+    char *s;
     PyObject *value;
 #if PY_MAJOR_VERSION >= 3
     PyBytesObject *input;
@@ -16,10 +18,12 @@ static PyObject *xevan_getpowhash(PyObject *self, PyObject *args)
     Py_INCREF(input);
     output = PyMem_Malloc(32);
 
+    ok =PyArg_ParseTuple(args, "s#", &s,&size);
+
 #if PY_MAJOR_VERSION >= 3
-    xevan_hash((char *)PyBytes_AsString((PyObject*) input), output);
+    xevan_hash((char *)PyBytes_AsString((PyObject*) input), size, output);
 #else
-    xevan_hash((char *)PyString_AsString((PyObject*) input), output);
+    xevan_hash((char *)PyString_AsString((PyObject*) input), size, output);
 #endif
     Py_DECREF(input);
 #if PY_MAJOR_VERSION >= 3
