@@ -23,6 +23,6 @@ xevan_hash_module = Extension('xevan_hash',
                                include_dirs=['.', './sha3'])
 
 setup (name = 'xevan_hash',
-       version = '0.1-test',
+       version = '0.2',
        description = 'Binding for xevan proof of work hashing.',
        ext_modules = [xevan_hash_module])
