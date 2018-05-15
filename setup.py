@@ -1,3 +1,4 @@
+import setuptools
 from distutils.core import setup, Extension
 
 xevan_hash_module = Extension('xevan_hash',
@@ -23,8 +24,14 @@ xevan_hash_module = Extension('xevan_hash',
                                include_dirs=['.', './sha3'])
 
 setup (name = 'xevan_hash',
-       version = '0.2',
+       version = '0.2.2',
        description = 'Binding for xevan proof of work hashing.',
+       long_description=open('README.md').read(),
+       long_description_content_type="text/markdown",
        url = 'https://github.com/ddude1/Xevan_in_Python.git',
        download_url = 'https://github.com/ddude1/Xevan_in_Python/archive/0.2.tar.gz',
+       classifiers=[
+   		'Development Status :: 5 - Production/Stable',
+   		'Programming Language :: Python',
+   	],
        ext_modules = [xevan_hash_module])
