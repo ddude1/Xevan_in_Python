@@ -24,7 +24,7 @@ xevan_hash_module = Extension('xevan_hash',
                                include_dirs=['.', './sha3'])
 
 setup (name = 'xevan_hash',
-       version = '0.2.2',
+       version = '0.2.3',
        description = 'Binding for xevan proof of work hashing.',
        long_description=open('README.md').read(),
        long_description_content_type="text/markdown",
